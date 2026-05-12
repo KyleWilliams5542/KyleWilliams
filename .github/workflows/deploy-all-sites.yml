@@ -43,7 +43,7 @@ jobs:
               echo "====================================="
               
               wrangler pages deploy "$SITE" \
-                --project-name=hwjz-0328 \
+                --project-name=kylewilliams \
                 --branch="$SITE" \
                 --commit-dirty=true \
                 --skip-caching
