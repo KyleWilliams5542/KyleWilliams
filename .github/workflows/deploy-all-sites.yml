@@ -1,0 +1,51 @@
+name: 智能部署 - 已存在则更新，不存在则创建
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 安装 Wrangler
+        run: npm install -g wrangler
+
+      - name: 获取本次修改的目录
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD | awk -F/ '!/^\./ {print $1}' | sort -u | tr '\n' ' ')
+          echo "dirs=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: 智能部署（已存在=更新，不存在=创建）
+        run: |
+          for SITE in ${{ steps.changed.outputs.dirs }}; do
+            if [ -d "$SITE" ]; then
+              echo "====================================="
+              echo " 处理站点：$SITE"
+              echo " 规则：已部署 → 更新；未部署 → 创建"
+              echo "====================================="
+              
+              wrangler pages deploy "$SITE" \
+                --project-name=hwjz-0328 \
+                --branch="$SITE" \
+                --commit-dirty=true \
+                --skip-caching
+            fi
+          done
