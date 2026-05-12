@@ -1,0 +1,6 @@
+{
+  "name": "quarisse-inc-website",
+  "version": "1.0.0",
+  "description": "Official website for QUARISSE INC",
+  "scripts": { "start": "npx serve ." }
+}
