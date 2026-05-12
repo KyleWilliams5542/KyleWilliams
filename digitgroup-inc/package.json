@@ -1,6 +1,0 @@
-{
-  "name": "digitgroup-inc-website",
-  "version": "1.0.0",
-  "description": "Official website for DIGITGROUP INC",
-  "scripts": { "start": "npx serve ." }
-}
