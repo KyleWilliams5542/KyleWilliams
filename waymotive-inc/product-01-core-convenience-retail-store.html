@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Convenience Retail Store - WAYMOTIVE INC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f0f8ff;
+            color: #333333;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            background-color: #6c5ce7;
+            color: white;
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar-logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .sidebar-nav {
+            list-style: none;
+        }
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .sidebar-nav a:hover {
+            background-color: #a29bfe;
+        }
+        .sidebar-nav a.active {
+            background-color: #a29bfe;
+            font-weight: 600;
+        }
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 3rem;
+        }
+        .product-container {
+            max-width: 900px;
+        }
+        .product-header {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #a29bfe;
+        }
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .product-info h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333333;
+        }
+        .product-info .description {
+            font-size: 1.15rem;
+            color: #33333399;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .product-features {
+            list-style: none;
+        }
+        .product-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #6c5ce722;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .product-features li i {
+            color: #6c5ce7;
+        }
+        .product-detail-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .product-detail-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        .product-detail-content p {
+            line-height: 1.9;
+            color: #333333cc;
+            font-size: 1.05rem;
+        }
+        .detail-images-section {
+            margin-top: 2.5rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .detail-images-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        .detail-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .detail-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .detail-image:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .detail-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 968px) {
+            body { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+            .main-content { margin-left: 0; }
+            .product-main { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">WAYMOTIVE INC</div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="index.html#products" class="active"><i class="fas fa-palette"></i> Products</a></li>
+            <li><a href="index.html#cases"><i class="fas fa-star"></i> Cases</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <div class="product-container">
+            <div class="product-header">
+                <a href="index.html#products" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
+            </div>
+            <div class="product-main">
+                <div class="product-image">
+                    <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_927e8695a21febfa.jpeg" alt="Core Convenience Retail Store">
+                </div>
+                <div class="product-info">
+                    <h1>Core Convenience Retail Store</h1>
+                    <p class="description">Our flagship neighborhood convenience store format, offering a full range of everyday essentials, snacks, beverages, and basic household items in easily accessible locations with extended operating hours.</p>
+                    <ul class="product-features"><li><i class="fas fa-check"></i> 16+ hour operating schedules (many 24/7)</li><li><i class="fas fa-check"></i> Curated inventory of high-demand daily items</li><li><i class="fas fa-check"></i> Strategically located in residential and high-traffic commercial areas</li><li><i class="fas fa-check"></i> Express checkout for 2-minute or less purchase experiences</li><li><i class="fas fa-check"></i> Fresh food and beverage options updated daily</li></ul>
+                </div>
+            </div>
+            <div class="product-detail-content">
+                <h2>Product Details</h2>
+                <p>Our core convenience retail stores are the foundation of WAYMOTIVE INC’s service, designed explicitly for customers who need to make fast, no-fuss purchases. Each location is strategically placed in high-foot-traffic areas including residential neighborhoods, commercial districts, and near major transportation hubs, so you never have to travel out of your way to pick up the items you need. Unlike large grocery stores that require navigating multiple aisles and long checkout lines, our stores are laid out for maximum efficiency, with all top-selling items within steps of the entrance. We update our inventory regularly based on local customer feedback, ensuring that we always carry the specific brands and products preferred by the communities we serve.
+
+Operating schedules are tailored to the needs of each local market, with most stores open a minimum of 16 hours a day, and over 60% of our locations operating 24 hours a day, 7 days a week. This accessibility makes us the go-to option for early morning commuters picking up coffee and breakfast, families grabbing last-minute dinner ingredients, late-night shift workers needing a snack after work, and anyone facing an unexpected household need outside of standard retail hours. All stores maintain consistent, transparent pricing with no hidden markup for after-hours purchases, so you always get fair value no matter when you shop.
+
+Our inventory includes a carefully selected range of products to cover nearly all immediate daily needs: fresh and shelf-stable snacks, hot and cold beverages, dairy and pantry essentials, over-the-counter medications, basic personal care items, cleaning supplies, and other common household goods. We also offer rotating seasonal items, from cold treats in the summer to emergency winter supplies, to align with changing local needs. Every store undergoes daily restocking and quality checks, particularly for perishable items, to ensure that all products on our shelves are fresh and meet our high quality standards.</p>
+            </div>
+            <div class="detail-images-section">
+                <h2><i class="fas fa-images"></i> Product Gallery</h2>
+                <div class="detail-images-grid">
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_9421e9ead8a4c43a.jpeg" alt="Core Convenience Retail Store Detail 1">
+                    </div>
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_5d33a93951feb77a.jpeg" alt="Core Convenience Retail Store Detail 2">
+                    </div>
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_e86bcee3ee6da72d.jpeg" alt="Core Convenience Retail Store Detail 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

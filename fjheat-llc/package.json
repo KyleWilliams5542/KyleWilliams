@@ -1,0 +1,6 @@
+{
+  "name": "fjheat-llc-website",
+  "version": "1.0.0",
+  "description": "Official website for fjheat LLC",
+  "scripts": { "start": "npx serve ." }
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Micro-Store - WAYMOTIVE INC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f0f8ff;
+            color: #333333;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 280px;
+            background-color: #6c5ce7;
+            color: white;
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .sidebar-logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        .sidebar-nav {
+            list-style: none;
+        }
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .sidebar-nav a:hover {
+            background-color: #a29bfe;
+        }
+        .sidebar-nav a.active {
+            background-color: #a29bfe;
+            font-weight: 600;
+        }
+        .main-content {
+            margin-left: 280px;
+            flex: 1;
+            padding: 3rem;
+        }
+        .product-container {
+            max-width: 900px;
+        }
+        .product-header {
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #6c5ce7;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #a29bfe;
+        }
+        .product-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .product-info h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333333;
+        }
+        .product-info .description {
+            font-size: 1.15rem;
+            color: #33333399;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .product-features {
+            list-style: none;
+        }
+        .product-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #6c5ce722;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .product-features li i {
+            color: #6c5ce7;
+        }
+        .product-detail-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .product-detail-content h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        .product-detail-content p {
+            line-height: 1.9;
+            color: #333333cc;
+            font-size: 1.05rem;
+        }
+        .detail-images-section {
+            margin-top: 2.5rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .detail-images-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            color: #333333;
+        }
+        .detail-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .detail-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .detail-image:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .detail-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 968px) {
+            body { flex-direction: column; }
+            .sidebar {
+                width: 100%;
+                position: static;
+                height: auto;
+            }
+            .main-content { margin-left: 0; }
+            .product-main { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">WAYMOTIVE INC</div>
+        <ul class="sidebar-nav">
+            <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="index.html#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="index.html#products" class="active"><i class="fas fa-palette"></i> Products</a></li>
+            <li><a href="index.html#cases"><i class="fas fa-star"></i> Cases</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <div class="product-container">
+            <div class="product-header">
+                <a href="index.html#products" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
+            </div>
+            <div class="product-main">
+                <div class="product-image">
+                    <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_4b88f96aec6b89dc.jpeg" alt="Neighborhood Micro-Store">
+                </div>
+                <div class="product-info">
+                    <h1>Neighborhood Micro-Store</h1>
+                    <p class="description">Small-format convenience locations in dense urban residential areas, offering a targeted selection of the most frequently purchased everyday items for local residents.</p>
+                    <ul class="product-features"><li><i class="fas fa-check"></i> Located within 5-minute walking distance of most surrounding homes</li><li><i class="fas fa-check"></i> Hyper-local inventory tailored to specific neighborhood preferences</li><li><i class="fas fa-check"></i> Same-day in-store pickup for online pre-orders</li><li><i class="fas fa-check"></i> Pet supplies and local specialty items not available in standard convenience stores</li><li><i class="fas fa-check"></i> Community-focused events and local product pop-ups</li></ul>
+                </div>
+            </div>
+            <div class="product-detail-content">
+                <h2>Product Details</h2>
+                <p>Our neighborhood micro-stores are designed for dense urban residential areas where full-sized grocery stores may be scarce or a long walk away. Typically under 1,000 square feet, these small locations are placed to be within a 5-minute walk for most households in the surrounding area, making them the ideal option for residents who need to pick up just one or two items without a long trip. We work closely with local community groups when selecting inventory for each micro-store, ensuring that we carry the specific brands, dietary options, and household items preferred by the residents in that specific neighborhood, including hard-to-find cultural and specialty products.
+
+In addition to our standard range of snacks, beverages, and household essentials, our micro-stores carry a selection of pet supplies, basic hardware items, and local artisanal products sourced from small businesses in the surrounding area. We also offer a free pre-order service, where customers can place an order for items through our mobile app and pick it up in-store in as little as 15 minutes, eliminating the need to wait for restocks or search for items on shelves. This service is particularly popular for customers with mobility limitations or those who are shopping for specific items during busy periods.
+
+Beyond retail, our micro-stores serve as small community hubs, hosting occasional pop-up events for local food producers, collecting donations for local food banks, and offering free community resources such as public water bottle filling stations and phone charging ports. We prioritize hiring staff who live in the local neighborhood, so our team knows regular customers by name and can provide personalized recommendations and service. All micro-stores are open 18 hours a day, 7 days a week, to accommodate the varied schedules of urban residents.</p>
+            </div>
+            <div class="detail-images-section">
+                <h2><i class="fas fa-images"></i> Product Gallery</h2>
+                <div class="detail-images-grid">
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_72e2a63081abee74.jpeg" alt="Neighborhood Micro-Store Detail 1">
+                    </div>
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_fede140abecc609c.jpeg" alt="Neighborhood Micro-Store Detail 2">
+                    </div>
+                    <div class="detail-image">
+                        <img src="https://img.kylewilliams.space/websites/waymotive-inc/images/img_0f12240a47d708a4.jpeg" alt="Neighborhood Micro-Store Detail 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

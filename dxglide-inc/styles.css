@@ -1,0 +1,111 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* 产品网格 */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+.product-card { border-radius: 12px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+.product-card:hover { transform: translateY(-5px); }
+.product-card img { width: 100%; height: 200px; object-fit: cover; }
+.product-card h3 { font-size: 1.25rem; margin: 1rem 0 0.5rem; }
+.product-card p { font-size: 0.9rem; opacity: 0.8; padding: 0 1rem 1rem; }
+.product-card .features { padding: 0 1rem 1rem; font-size: 0.85rem; }
+.product-card .features li { margin: 0.25rem 0; }
+
+/* 案例网格 */
+.cases-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
+.case-card { border-radius: 12px; overflow: hidden; }
+.case-card img { width: 100%; height: 250px; object-fit: cover; }
+.case-card h3 { font-size: 1.25rem; margin: 1rem 0 0.5rem; }
+.case-card .client { font-size: 0.9rem; opacity: 0.7; margin-bottom: 0.5rem; }
+.case-card p { font-size: 0.9rem; opacity: 0.8; padding: 0 1rem; }
+.case-card .results { padding: 1rem; font-size: 0.85rem; }
+.case-card .results li { margin: 0.25rem 0; }
+
+/* 联系表单 */
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form textarea, .contact-form select {
+    padding: 1rem; border: 1px solid #e5e7eb; border-radius: 8px; font-family: inherit;
+}
+.contact-form button { padding: 1rem 2rem; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; }
+
+/* 法律部分 */
+.legal-section { padding: 4rem 2rem; }
+.legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+.legal-item h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+.legal-item p { font-size: 0.9rem; line-height: 1.8; opacity: 0.8; }
+
+@media (max-width: 768px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .cases-grid { grid-template-columns: 1fr; }
+    .legal-grid { grid-template-columns: 1fr; }
+}
+
+.business-body { font-family: 'Open Sans', sans-serif; background: #f8f9fa; color: #333; }
+
+/* New Business Header Styles */
+.business-header-main { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.business-header-wrapper { max-width: 1400px; margin: 0 auto; padding: 1rem 4rem; display: flex; justify-content: space-between; align-items: center; }
+.business-branding { display: flex; align-items: center; gap: 1rem; }
+.business-logo-mark { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); border-radius: 12px; }
+.business-logo-icon { font-size: 1.5rem; }
+.business-logo-text { display: flex; flex-direction: column; }
+.business-logo { font-family: 'Merriweather', serif; font-size: 1.375rem; font-weight: 700; color: #1e3a5f; text-decoration: none; line-height: 1; }
+.business-tagline { font-size: 0.75rem; color: #6b7280; margin-top: 0.25rem; }
+.business-navigation { display: flex; gap: 2rem; }
+.business-nav-item { color: #4b5563; text-decoration: none; font-weight: 500; font-size: 1rem; padding: 0.5rem 0; position: relative; transition: color 0.3s ease; }
+.business-nav-item:hover { color: #1e3a5f; }
+.business-nav-item::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: #2563eb; transition: width 0.3s ease; }
+.business-nav-item:hover::after { width: 100%; }
+.business-cta { display: flex; align-items: center; }
+.business-button { display: inline-block; background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.business-button:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(30, 58, 95, 0.3); }
+
+.business-hero { min-height: 80vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; padding-top: 80px; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,58,95,0.9), rgba(37,99,235,0.7)); }
+.hero-content { position: relative; z-index: 1; text-align: center; color: #fff; padding: 2rem; max-width: 800px; }
+.hero-content h1 { font-family: 'Merriweather', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+.tagline { font-size: 1.25rem; opacity: 0.9; }
+
+.business-about { padding: 6rem 2rem; background: #fff; }
+.business-about h2 { font-family: 'Merriweather', serif; font-size: 2.5rem; color: #1e3a5f; margin-bottom: 1rem; }
+.lead { font-size: 1.25rem; color: #4b5563; margin-bottom: 1rem; }
+
+.business-products { padding: 6rem 2rem; }
+.business-products h2 { text-align: center; font-family: 'Merriweather', serif; font-size: 2.5rem; color: #1e3a5f; margin-bottom: 3rem; }
+.business-products .product-card { background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.business-products .product-number { font-size: 3rem; font-weight: 700; color: #e5e7eb; padding: 1rem; }
+
+.business-cases { padding: 6rem 2rem; background: #fff; }
+.business-cases h2 { text-align: center; font-family: 'Merriweather', serif; font-size: 2.5rem; color: #1e3a5f; margin-bottom: 3rem; }
+.business-cases .case-card { background: #f8f9fa; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+
+.business-contact { padding: 6rem 2rem; }
+.business-contact h2 { text-align: center; font-family: 'Merriweather', serif; font-size: 2rem; color: #1e3a5f; margin-bottom: 2rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; }
+.business-contact .contact-form button { background: #2563eb; color: #fff; }
+
+/* Business Contact new styles */
+.business-contact-wrap { max-width: 1200px; margin: 0 auto; }
+.business-contact-header { text-align: center; margin-bottom: 3rem; }
+.business-section-label { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #2563eb; margin-bottom: 1rem; }
+.business-contact-header h2 { font-family: 'Merriweather', serif; font-size: 2.5rem; color: #1e3a5f; margin-bottom: 1rem; }
+.business-desc { color: #6b7280; max-width: 600px; margin: 0 auto; }
+.business-contact-content { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; }
+.business-contact-card { background: #fff; border-radius: 16px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-left: 4px solid #2563eb; }
+.business-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.business-info-item:last-child { margin-bottom: 0; }
+.business-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #1e3a5f, #2563eb); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+.business-info-text h4 { color: #1e3a5f; margin-bottom: 0.25rem; }
+.business-info-text p { color: #6b7280; }
+.business-cta { text-align: center; padding: 2rem; }
+.business-cta h3 { font-family: 'Merriweather', serif; color: #1e3a5f; margin-bottom: 1rem; }
+.business-cta p { color: #6b7280; }
+
+.legal-section { background: #f8f9fa; }
+.legal-section h3 { color: #1e3a5f; }
+
+.business-footer { background: #111827; color: #fff; padding: 2rem; text-align: center; }

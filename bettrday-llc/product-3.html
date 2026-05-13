@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballet Comfort Flats | BETTRDAY LLC</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid #00ffff33;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 28px;
+    font-weight: 900;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff80;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-menu a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #00ffff;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 0 30px;
+}
+
+.hero-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 72px;
+    font-weight: 900;
+    color: #00ffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px #00ffff80, 0 0 60px #00ffff40;
+    letter-spacing: 3px;
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 30px #00ffff80, 0 0 60px #00ffff40; }
+    50% { text-shadow: 0 0 40px #00ffff, 0 0 80px #00ffff80, 0 0 120px #ff00ff40; }
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    color: #c0c0c0;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    color: #0a0a0f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 30px #00ffff40;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #ffffff40, transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px #00ffff80, 0 0 80px #ff00ff40;
+}
+
+/* Section Styles */
+section {
+    padding: 120px 0;
+    position: relative;
+}
+
+.section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 80px;
+    color: #00ffff;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+}
+
+/* Products Section */
+.products {
+    background: linear-gradient(180deg, #0a0a0f 0%, #151520 50%, #0a0a0f 100%);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid #00ffff22;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #00ffff66;
+    box-shadow: 0 20px 60px #00ffff22;
+}
+
+.product-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 30px;
+}
+
+.product-info h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    color: #00ffff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.product-info p {
+    color: #a0a0a0;
+    line-height: 1.8;
+}
+
+/* Cases Section */
+.cases {
+    background: #0a0a0f;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.case-card {
+    background: rgba(25, 25, 35, 0.9);
+    border: 1px solid #ff00ff22;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.case-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.case-card:hover::after {
+    opacity: 1;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff00ff66;
+    box-shadow: 0 20px 60px #ff00ff22;
+}
+
+.case-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.case-card:hover .case-image img {
+    transform: scale(1.15);
+}
+
+.case-content {
+    padding: 35px;
+}
+
+.case-content h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 24px;
+    color: #ff00ff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.case-content p {
+    color: #b0b0b0;
+    line-height: 1.8;
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(180deg, #0a0a0f 0%, #151520 100%);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 20px;
+    line-height: 2;
+    color: #c0c0c0;
+    border: 1px solid #00ffff22;
+    padding: 50px;
+    background: rgba(20, 20, 30, 0.6);
+}
+
+/* Contact Section */
+.contact {
+    background: #0a0a0f;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 40px;
+    background: rgba(20, 20, 30, 0.8);
+    border: 1px solid #00ffff22;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-color: #00ffff66;
+    box-shadow: 0 0 30px #00ffff22;
+}
+
+.contact-item h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 20px;
+    color: #00ffff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.contact-item p {
+    color: #b0b0b0;
+    font-size: 18px;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(180deg, #0a0a0f 0%, #050508 100%);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #00ffff22;
+}
+
+.footer p {
+    color: #606060;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+
+.view-details-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.product-card:hover .view-details-link,
+.product-item:hover .view-details-link {
+    opacity: 1;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .hero-title {
+        font-size: 42px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .section-title {
+        font-size: 32px;
+    }
+    
+    .products-grid,
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 产品详情页特定样式 */
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #000;
+}
+
+.product-detail-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.thumbnail-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.thumbnail.active {
+    border: 2px solid #0066cc;
+    box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.product-description {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.product-features {
+    margin-top: 1rem;
+}
+
+.features-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+    color: #0066cc;
+}
+
+.product-details-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid #eee;
+}
+
+.details-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.details-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.details-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 968px) {
+    .product-detail-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .product-detail-container {
+        padding: 1rem;
+    }
+    
+    .product-title {
+        font-size: 1.75rem;
+    }
+    
+    .thumbnail-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav style="background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="font-size: 1.5rem; font-weight: 700; color: #000; text-decoration: none;">BETTRDAY LLC</a>
+            <a href="index.html#products" style="color: #666; text-decoration: none; transition: color 0.3s ease;">Back to Products</a>
+        </div>
+    </nav>
+
+    <!-- 产品详情内容 -->
+    <div class="product-detail-container">
+        <a href="index.html#products" class="back-button">
+            <span>←</span> Back to All Products
+        </a>
+        
+        <div class="product-detail-hero">
+            <!-- 产品图片区域 -->
+            <div class="product-gallery">
+                <img src="https://img.kylewilliams.space/websites/bettrday-llc/images/9b657a661c86.jpg" alt="Ballet Comfort Flats" class="main-image" id="mainProductImage">
+                <div class="thumbnail-gallery">
+                    <img src="https://img.kylewilliams.space/websites/bettrday-llc/images/9b657a661c86.jpg" alt="Main" class="thumbnail active" onclick="changeMainImage(this.src, this)">
+                    <img src="https://img.kylewilliams.space/websites/bettrday-llc/images/9bb585fb059e.jpg" alt="Detail 1" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                    <img src="https://img.kylewilliams.space/websites/bettrday-llc/images/75c88b19a1e1.jpg" alt="Detail 2" class="thumbnail" onclick="changeMainImage(this.src, this)">
+                </div>
+            </div>
+            
+            <!-- 产品信息区域 -->
+            <div class="product-info">
+                <h1 class="product-title">Ballet Comfort Flats</h1>
+                <p class="product-description">Soft, flexible ballet flats designed for all-day wear, with a classic rounded toe and hidden support features that eliminate the foot pain commonly associated with traditional flat shoes.</p>
+                
+                <div class="product-features">
+                    <h3 class="features-title">Key Features</h3>
+                    <ul class="features-list">
+                        <li class="feature-item"><span class="feature-icon">✓</span> Hidden orthotic insole with arch support and heel cushioning</li><li class="feature-item"><span class="feature-icon">✓</span> Stretchable, blister-resistant upper material</li><li class="feature-item"><span class="feature-icon">✓</span> Flexible, non-slip rubber outsole for natural movement</li><li class="feature-item"><span class="feature-icon">✓</span> Collapsible heel design for versatile wear as flats or mules</li><li class="feature-item"><span class="feature-icon">✓</span> Available in standard, wide, and extra-wide widths</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 详细介绍区域 -->
+        <div class="product-details-section">
+            <h2 class="details-title">Product Details</h2>
+            <div class="details-content">
+                Unlike traditional thin-soled ballet flats, our Ballet Comfort Flats feature a hidden 6mm orthotic insole with built-in arch support and heel cushioning that reduces strain on the feet, knees, and lower back during extended wear. The soft, stretchable synthetic upper conforms to the unique shape of your foot, eliminating blisters and rubbing even during the first wear, while the rounded toe box provides ample room for toe splay to prevent cramping. The flexible, non-slip rubber outsole bends with your foot as you walk, supporting natural movement rather than restricting it.<br><br><br><br>These flats are available in 15 color and material options, from classic black leather and nude suede to printed canvas and metallic finishes, making them suitable for work, casual outings, and even semi-formal events. The collapsible heel design allows them to be worn as traditional flats or slid on as mules for quick errands, and the lightweight construction makes them ideal for travel, as they take up minimal space in luggage and weigh less than 6 ounces per pair. All styles are offered in standard, wide, and extra-wide width options to accommodate different foot shapes.
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer style="background: #1a1a1a; color: white; padding: 3rem 1rem; margin-top: 4rem;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p style="margin: 0;">&copy; 2024 BETTRDAY LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function changeMainImage(src, thumb) {
+            const mainImage = document.getElementById('mainProductImage');
+            mainImage.src = src;
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            if (thumb) thumb.classList.add('active');
+        }
+    </script>
+</body>
+</html>

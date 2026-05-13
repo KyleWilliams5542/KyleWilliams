@@ -1,0 +1,6 @@
+{
+  "name": "dxglide-inc-website",
+  "version": "1.0.0",
+  "description": "Official website for DXGLIDE INC",
+  "scripts": { "start": "npx serve ." }
+}
