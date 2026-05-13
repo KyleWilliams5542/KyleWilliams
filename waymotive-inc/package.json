@@ -1,6 +1,0 @@
-{
-  "name": "waymotive-inc-website",
-  "version": "1.0.0",
-  "description": "Official website for WAYMOTIVE INC",
-  "scripts": { "start": "npx serve ." }
-}
